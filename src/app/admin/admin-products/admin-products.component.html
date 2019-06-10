@@ -1,0 +1,27 @@
+<p>
+    <a [routerLink]="['/admin/products/new']" routerLinkActive="router-link-active" class="btn btn-primary"> + New Product</a>
+</p>
+ 
+<p>
+    <!-- <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search..."/> -->
+</p>
+
+
+<table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of filteredProducts">
+            <td>{{p.payload.val().title}}</td>
+            <td>{{p.payload.val().price}}</td>
+            <td>
+                 <a [routerLink]="['/admin/products/', p.key]" routerLinkActive="router-link-active" >Edit</a> 
+            </td>
+        </tr>
+    </tbody>
+</table>

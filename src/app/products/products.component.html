@@ -1,0 +1,22 @@
+<div class="container" style="margin: 20px">
+  <div class="row">
+
+    <div class="col-3" style="text-align: center">
+      <app-product-filter [choosenCategory]="choosenCategory"></app-product-filter>
+    </div>
+
+    <div class="col-1"></div> 
+ 
+    <div class="col-8">
+      <h4 style="color:cadetblue ">Products</h4>
+      <div class="row">
+          <ng-container *ngFor="let product of filteredProducts; let i = index">
+              <div class="col" style="text-align: center">
+                  <app-product-card [product] = "product" [shoppingCart] = "cart"></app-product-card>
+              </div>
+              <div *ngIf="(i+3)%2==0" class="w-100"></div>
+            </ng-container>
+      </div>
+    </div>  
+  </div>
+</div> 

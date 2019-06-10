@@ -1,0 +1,14 @@
+
+
+<div class="sticky-top" style="top: 95px">
+    <h4 style="color:cadetblue ">Categories</h4>
+    <a class="list-group-item list-group-item-action" [class.active]="!choosenCategory" [routerLink]="['/']">
+      All Categories</a>
+    
+    <div *ngFor="let cat of categories$ | async" class="list-group">
+      <a class="list-group-item list-group-item-action" 
+          [class.active]="choosenCategory === cat.Name" 
+          [routerLink]="['/']" routerLinkActive="router-link-active" 
+          [queryParams]="{category: cat.Name}">{{cat.Name}}</a>
+    </div> 
+</div>  

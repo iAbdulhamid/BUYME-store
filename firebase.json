@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "buymestore",
+    "public": "dist/BUYME-Store",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
